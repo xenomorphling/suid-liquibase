@@ -565,5 +565,5 @@ values (gpn_oim.filters_seq.nextval, 13, 13, ' 1=1 ', sysdate, 'все ресу�
 
 COMMIT;
 
- -- rollback delete GPN_OIM.POINTS where ID = gpn_oim.points_seq.nextval;
- -- rollback delete GPN_OIM.FILTERS where ID = gpn_oim.filters_seq.nextval;
+ -- rollback delete from GPN_OIM.POINTS where ID = gpn_oim.points_seq.nextval;
+ -- rollback delete from GPN_OIM.FILTERS where ID = gpn_oim.filters_seq.nextval;

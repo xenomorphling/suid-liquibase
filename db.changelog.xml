@@ -49,29 +49,86 @@
     <include file="Tables/z_logical_systems_update.sql" />
     <include file="Tables/z_menu_items_inserts.sql" />
     <include file="Tables/z_widget_sets_inserts.sql" />
-    <include file="Tables/z_user_roles_widget_sets_inserts" />
+    <include file="Tables/z_user_roles_widget_sets_inserts.sql" />
     <include file="Tables/z_user_settings.sql" />
     <include file="Tables/z_user_settings_inserts.sql" />
     <include file="Functions/z_req_check_sod_performed5.sql" />
     <include file="Views/Z_TASKS_TO_APPROVE_SUID5.sql" />
-    <include file="Functions/itsk_get_role_id.sql " />
+    <include file="Functions/itsk_get_role_id.sql" />
 
+    <include file="Tables/FILTERS.sql" />
+    <include file="Tables/POINTS.sql" />
+    <include file="Tables/QRTZ_SUID5.sql" />
+    <include file="Tables/REQUEST_ITEM_AND_CONF_ITEM_REF.sql" />
+    <include file="Tables/z_functions.sql" />
+    <include file="Tables/z_logical_systems_alter.sql" />
+    <include file="Tables/z_widgets.sql " />
+    <include file="Tables/z_menu_items.sql " />
+    <include file="Tables/ALTER_TABLE_Z_PROCESS_STEP_add_columns.sql" />
+    <include file="Tables/Z_USER_PHOTO.sql" />
+    <include file="Tables/ALTER_TABLE_Z_USER_PHOTO_ADD_meta_info.sql" />
+    <include file="Tables/ALTER_TABLE_Z_USER_PHOTO_set_image_null.sql" />
+    <include file="Tables/Z_PROCESS_STEP_HIST.sql " />
+    <include file="Tables/z_widget_sets.sql" />
+    <include file="Tables/z_user_roles_widget_sets.sql" />
+    <include file="Tables/z_widget_sets_widgets.sql" />
+    <include file="Tables/FILTERS_SEQ.sql" />
+    <include file="Tables/POINTS_SEQ.sql" />
+    <include file="Tables/CONFIDENTIAL_ITEM_SEQ.sql " />
+    <include file="Tables/IDM_REQUEST_SEQ.sql " />
+    <include file="Tables/filters_and_points_inserts.sql" />
+    <include file="Procedures/ITSK_GET_FOLDER_TREE_LIMIT_2.sql" />
+    <include file="Procedures/Z_SAVE_USER_PHOTO_with_meta_info.sql " />
+    <include file="Views/ITSK_LINKED_RESOURCES_V.sql" />
+    <include file="Views/Z_GP_EMPS.sql " />
+    <include file="Views/Z_VW_OTHER_ROLES.sql" />
+    <include file="Views/Z_VW_USER_LIST.sql " />
+    <include file="Tables/GPN_OIM_Z_WIDGET_SETS_WIDGETS_INSERTS.sql" />
+    <include file="Tables/GPN_OIM_Z_WIDGETS_INSERTS.sql" />
+    <include file="Tables/z_functions_inserts.sql" />
+    <include file="Tables/z_logical_systems_update.sql" />
+    <include file="Tables/z_menu_items_inserts.sql" />
+    <include file="Tables/z_widget_sets_inserts.sql" />
+    <include file="Tables/z_user_roles_widget_sets_inserts" />
+    <include file="Tables/z_user_settings.sql" />
+    <include file="Tables/z_user_settings_inserts.sql " />
+    <include file="Functions/z_req_check_sod_performed5.sql" />
+    <include file="Views/Z_TASKS_TO_APPROVE_SUID5.sql" />
+    <include file="Functions/itsk_get_role_id.sql" />
 
+    <include file="Functions/ITSK_APPROVAL_ROUTES_FNC.sql" />
+    <include file="Tables/Z_PROCESS_STEP_ATTRS_index.sql " />
+    <include file="Tables/z_request_item_index.sql" />
+    <include file="Tables/Z_PROCESS_STEP_index.sql" />
 
+    <include file="Tables/Z_REQUESTS_index.sql" />
+    <include file="Tables/Z_REQUEST_ITEM_index_beneficiary_key.sql" />
+    <include file="Tables/gather_stats.sql" /> <!-- нужен ли ролбэк? -->
+    <include file="Procedures/get_folder_tree_limit.sql" />
+    <include file="Tables/WIDGET_FUNCTIONS_ROLE_SETTINGS.sql" />
+    <include file="Tables/insert_widget_functions.sql" />
+    <include file="Tables/ALTER_TABLE_Z_FUNCTIONS_add_columns.sql" />
+    <include file="Tables/insert_z_functions.sql" />
+    <include file="Tables/insert_z_widget_sets.sql" />
+    <include file="Tables/insert_z_user_roles_widget_sets_iaas.sql" />
+    <include file="Tables/insert_z_widgets.sql" />
+    <include file="Tables/REST_ENDPOINTS.sql" />
+    <include file="Tables/insert_rest_endpoints.sql" />
+    <include file="Tables/CONTEXT_VAR.sql" />
+    <include file="Tables/CONTEXT_VAL_STRING.sql" />
+    <include file="Tables/CONTEXT_VAL_LONG.sql" />
+    <include file="Tables/CONTEXT_VAL_BOOL.sql" />
+    <include file="Tables/CONTEXT_VAR_SCH.sql" />
+    <include file="Tables/create_table_approval_route_status.sql" />
 
-
-
-
-    <include file="Views\Z_VW_USER_LIST.sql" />
-    <include file="Views\Z_VW_USER_LIST.sql" />
-    <include file="Views\Z_VW_USER_LIST.sql" />
-    <include file="Views\Z_VW_USER_LIST.sql" />
-    <include file="Views\Z_VW_USER_LIST.sql" />
-    <include file="Views\Z_VW_USER_LIST.sql" />
-    <include file="Views\Z_VW_USER_LIST.sql" />
-    <include file="Views\Z_VW_USER_LIST.sql" />
-    <include file="Views\Z_VW_USER_LIST.sql" />
-    <include file="Views\Z_VW_USER_LIST.sql" />
-
+    <include file="Tables/EXTERNAL_DATA_SOURCE.sql" />
+    <include file="Tables/EDS_TO_LOGICAL_SYSTEM.sql" />
+    <include file="Tables/LOGICAL_SYSTEM_OWNER.sql" />
+    <include file="Tables/LOGICAL_SYSTEM_EXT_OWNER.sql" />
+    <include file="Tables/PRIORITY_BY_PROPERTY.sql" />
+    <include file="Tables/JV_COMMIT.sql" />
+    <include file="Tables/JV_COMMIT_PROPERTY.sql" />
+    <include file="Tables/JV_GLOBAL_ID.sql" />
+    <include file="Tables/JV_SNAPSHOT.sql" />
 
 </databaseChangeLog>

@@ -20,7 +20,7 @@ NOCOMPRESS
 NOCACHE
 MONITORING;
 
-COMMENT ON TABLE gpn_oim.z_widget_sets_widgets IS '���������� ��������, �������� � ������ ��������';
+COMMENT ON TABLE gpn_oim.z_widget_sets_widgets IS 'Справочник виджетов, входящих в наборы виджетов';
 
 
 CREATE UNIQUE INDEX gpn_oim.pk_z_widget_sets_widgets ON gpn_oim.z_widget_sets_widgets
@@ -52,5 +52,5 @@ ALTER TABLE gpn_oim.z_widget_sets_widgets ADD (
 GRANT INSERT, SELECT, UPDATE ON gpn_oim.z_widget_sets_widgets TO DEVELOPER;
 GRANT INSERT, SELECT, UPDATE ON gpn_oim.z_widget_sets_widgets TO SUPPORT;
 
---rollback DROP TABLE gpn_oim.z_widget_sets_widgetsж
---rollback DROP INDEX gpn_oim.pk_z_widget_sets_widgets ON gpn_oim.z_widget_sets_widgetsж
+--rollback DROP TABLE gpn_oim.z_widget_sets_widgets;
+--rollback DROP INDEX gpn_oim.pk_z_widget_sets_widgets ON gpn_oim.z_widget_sets_widgets;

@@ -19,7 +19,7 @@ NOCOMPRESS
 NOCACHE
 MONITORING;
 
-COMMENT ON TABLE gpn_oim.z_widget_sets IS '���������� ������� ��������';
+COMMENT ON TABLE gpn_oim.z_widget_sets IS 'Справочник наборов виджетов';
 
 
 CREATE UNIQUE INDEX gpn_oim.z_widget_sets$widget_set_code ON gpn_oim.z_widget_sets

@@ -19,7 +19,7 @@ NOCOMPRESS
 NOCACHE
 MONITORING;
 
-COMMENT ON TABLE gpn_oim.z_widgets IS '���������� ��������';
+COMMENT ON TABLE gpn_oim.z_widgets IS 'Справочник виджетов';
 
 
 CREATE UNIQUE INDEX gpn_oim.z_widgets$widget_code ON gpn_oim.z_widgets
@@ -48,6 +48,6 @@ GRANT INSERT, SELECT, UPDATE ON gpn_oim.z_widgets TO developer;
 GRANT INSERT, SELECT, UPDATE ON gpn_oim.z_widgets TO support;
 
 --rollback DROP TABLE gpn_oim.z_widgets;
---rollback DROP INDEX gpn_oim.z_widgets$widget_code ON gpn_oim.z_widgets;
---rollback DROP INDEX gpn_oim.pk_z_widgets ON gpn_oim.z_widgets;
---rollback DROP ALTER TABLE gpn_oim.z_widgets ADD (;
+--rollback DROP INDEX gpn_oim.z_widgets$widget_code;
+--rollback DROP INDEX gpn_oim.pk_z_widgets;
+--rollback DROP ALTER TABLE gpn_oim.z_widgets drop pk_z_widgets;

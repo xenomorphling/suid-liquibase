@@ -41,7 +41,7 @@ when usr_udf_department_name is not null then usr_udf_department_name
  )
 as act_name,
 (case
-when usr_emp_type='Contractor' then '���������'
+when usr_emp_type='Contractor' then 'Подрядчик'
 when u.usr_title is null then u.usr_udf_title_name
   else nvl(z_titles.title_name, u.usr_title)
   end) as usr_title_hr,

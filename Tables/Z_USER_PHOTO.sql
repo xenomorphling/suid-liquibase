@@ -45,3 +45,6 @@ alter table gpn_oim.Z_USER_PHOTO
 
 
 --rollback DROP TABLE gpn_oim.Z_USER_PHOTO;
+--rollback drop index gpn_oim.IDX_Z_USER_PHOTO_CREATION_DATE;
+--rollback drop index gpn_oim.IDX_Z_USER_PHOTO_UPDATE_DATE;
+--rollback alter table gpn_oim.Z_USER_PHOTO drop pk_z_user_photo;

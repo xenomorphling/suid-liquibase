@@ -19,7 +19,7 @@ NOCOMPRESS
 NOCACHE
 MONITORING;
 
-COMMENT ON TABLE gpn_oim.z_functions IS '���������� �������';
+COMMENT ON TABLE gpn_oim.z_functions IS 'Справочник функций';
 
 
 CREATE UNIQUE INDEX gpn_oim.z_functions$function_code ON gpn_oim.z_functions

@@ -67,7 +67,7 @@ BEGIN
 
 select count(t_count.row_key) result_size into o_total_result_size
        from (
-    select r2.id row_key,  -- ����� ����� �� ������� gpn_oim.z_get_default_access_id
+    select r2.id row_key,  -- числа взяты из функции gpn_oim.z_get_default_access_id
            max(case when ra.resource_access_type_id = 1 and coalesce(re.entitlement_id,0) > 0 and r2.is_hidden = 0 then 1 end) ro,
            max(case when ra.resource_access_type_id = 2 and coalesce(re.entitlement_id,0) > 0 and r2.is_hidden = 0 then 1 end) rw,
            max(case when ra.resource_access_type_id = 7 and coalesce(re.entitlement_id,0) > 0 and r2.is_hidden = 0 then 1 end) wo,
@@ -91,7 +91,7 @@ select count(t_count.row_key) result_size into o_total_result_size
     select id, name, description, owner_id, parent_resource_id, is_hidden, hc has_child, 
            path_names, path_ids, uname, udescription
       from itsk_mv_resources_tree zr1
-     where l_hasFullAccess = 1 -- ������ ������
+     where l_hasFullAccess = 1 -- полный доступ
        and (coalesce(i_doSearch,0)=0 or (coalesce(i_doSearch,0)>0 and (upper(zr1.uname) like upper(i_searchVal) or zr1.udescription like upper(i_searchVal))))
        and case when coalesce(i_doSearch,0)=0 then coalesce(currentFolderId,-1) else 1 end = case when coalesce(i_doSearch,0)=0 then coalesce(parent_resource_id,-1) else 1 end
      union all  
@@ -99,7 +99,7 @@ select count(t_count.row_key) result_size into o_total_result_size
            path_names, path_ids, uname, udescription
       from itsk_mv_resources_tree zr1
       join table(restrictAccessArray) sa on zr1.id = value(sa)
-     where l_hasFullAccess <> 1  -- �� ������ ������
+     where l_hasFullAccess <> 1  -- не полный доступ
        and (coalesce(i_doSearch,0)=0 or (coalesce(i_doSearch,0)>0 and (upper(zr1.uname) like upper(i_searchVal) or zr1.udescription like upper(i_searchVal))))
        and case when coalesce(i_doSearch,0)=0 then coalesce(currentFolderId,-1) else 1 end = case when coalesce(i_doSearch,0)=0 then coalesce(parent_resource_id,-1) else 1 end
   ) r2
@@ -110,12 +110,12 @@ select count(t_count.row_key) result_size into o_total_result_size
           r2.is_hidden, r2.has_child, usr.usr_display_name, r2.path_names, r2.path_ids
           ) t_count;
 
-  -- ��� �� �� �������� ����������� ��������
+  -- все ФР со текущими состояниями доступов
   open result_ for
   SELECT res_tree_maxResults.*
  from (select res_tree_full.*, rownum AS rnum   
  from (
-    select r2.id row_key,  -- ����� ����� �� ������� gpn_oim.z_get_default_access_id
+    select r2.id row_key,  -- числа взяты из функции gpn_oim.z_get_default_access_id
            max(case when ra.resource_access_type_id = 1 and coalesce(re.entitlement_id,0) > 0 and r2.is_hidden = 0 then 1 end) ro,
            max(case when ra.resource_access_type_id = 2 and coalesce(re.entitlement_id,0) > 0 and r2.is_hidden = 0 then 1 end) rw,
            max(case when ra.resource_access_type_id = 7 and coalesce(re.entitlement_id,0) > 0 and r2.is_hidden = 0 then 1 end) wo,
@@ -139,7 +139,7 @@ select count(t_count.row_key) result_size into o_total_result_size
     select id, name, description, owner_id, parent_resource_id, is_hidden, hc has_child, 
            path_names, path_ids, uname, udescription
       from itsk_mv_resources_tree zr1
-     where l_hasFullAccess = 1 -- ������ ������
+     where l_hasFullAccess = 1 -- полный доступ
        and (coalesce(i_doSearch,0)=0 or (coalesce(i_doSearch,0)>0 and (upper(zr1.uname) like upper(i_searchVal) or zr1.udescription like upper(i_searchVal))))
        and case when coalesce(i_doSearch,0)=0 then coalesce(currentFolderId,-1) else 1 end = case when coalesce(i_doSearch,0)=0 then coalesce(parent_resource_id,-1) else 1 end
      union all  
@@ -147,7 +147,7 @@ select count(t_count.row_key) result_size into o_total_result_size
            path_names, path_ids, uname, udescription
       from itsk_mv_resources_tree zr1
       join table(restrictAccessArray) sa on zr1.id = value(sa)
-     where l_hasFullAccess <> 1  -- �� ������ ������
+     where l_hasFullAccess <> 1  -- не полный доступ
        and (coalesce(i_doSearch,0)=0 or (coalesce(i_doSearch,0)>0 and (upper(zr1.uname) like upper(i_searchVal) or zr1.udescription like upper(i_searchVal))))
        and case when coalesce(i_doSearch,0)=0 then coalesce(currentFolderId,-1) else 1 end = case when coalesce(i_doSearch,0)=0 then coalesce(parent_resource_id,-1) else 1 end
   ) r2
@@ -164,6 +164,7 @@ select count(t_count.row_key) result_size into o_total_result_size
 WHERE rnum > i_skip;
 END itsk_get_folder_tree_limit;
 /
+
 
 
 --rollback DROP PROCEDURE itsk_get_folder_tree_limit;

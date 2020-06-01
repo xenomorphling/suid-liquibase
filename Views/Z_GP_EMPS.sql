@@ -40,7 +40,7 @@ AS (
         , empl.EMPLOYMENT_WEIGHT
         , empl.MANAGER_USR_KEY
         , manager.USR_DISPLAY_NAME AS MANAGER_DISPLAY_NAME
-        , decode(empl.EMPLOYEE_STATUS, 'Working', '��������','Fired', '������','Candidate', '��������', empl.EMPLOYEE_STATUS) AS EMPLOYEE_STATUS_HR
+        , decode(empl.EMPLOYEE_STATUS, 'Working', 'Работает','Fired', 'Уволен','Candidate', 'Кандидат', empl.EMPLOYEE_STATUS) AS EMPLOYEE_STATUS_HR
         , empl.EMPLOYEE_STATUS
         , empl_types.lkv_decoded AS EMPLOYEE_TYPE_HR
         , Z_CONF_ACCESS.NAME AS CONF_ACCESS_NAME

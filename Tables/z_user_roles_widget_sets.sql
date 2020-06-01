@@ -17,7 +17,7 @@ NOCOMPRESS
 NOCACHE
 MONITORING;
 
-COMMENT ON TABLE gpn_oim.z_user_roles_widget_sets IS '������� ������������ ����� ������������� OIM, � ������� �������� (���� � ������)';
+COMMENT ON TABLE gpn_oim.z_user_roles_widget_sets IS 'Таблица соответствия ролей пользователей OIM, и наборов виджетов (один к одному)';
 
 CREATE UNIQUE INDEX gpn_oim.z_usr_rls_wdg_sts$ugp_key ON gpn_oim.z_user_roles_widget_sets
 (ugp_key)

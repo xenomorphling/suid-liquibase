@@ -21,7 +21,7 @@ NOCOMPRESS
 NOCACHE
 MONITORING;
 
-COMMENT ON TABLE gpn_oim.z_menu_items IS '���������� ������� ����';
+COMMENT ON TABLE gpn_oim.z_menu_items IS 'Справочник пунктов меню';
 
 
 CREATE INDEX gpn_oim.z_menu_items$widget_id ON gpn_oim.z_menu_items
